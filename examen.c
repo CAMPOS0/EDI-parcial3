@@ -33,6 +33,8 @@ typedef struct {
 
 typedef struct{
     DatosPersonales datos;
+    
+    
     char deporte[30];
     int numMedallas;
 
@@ -47,3 +49,29 @@ int main()
     return 0;
 }
 
+
+
+
+//mi parte 
+void leeAr(int tam)
+{
+    FILE *ptr;
+    int i;
+    float deportista;
+    char name[nomTam];
+
+    ptr=fopen("deportista.txt","r");
+
+    if(ptr==NULL)
+    {
+        printf("Error: No existe el archivo deportista.txt");
+        exit(0);
+    }
+
+    while (!feof(ptr))
+    {
+        fsacnf (ptr, "%d", &dato);
+        printf("%d",dato);
+    }
+    fclose(ptr);
+}
